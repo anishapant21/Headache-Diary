@@ -1,0 +1,56 @@
+.logo {
+  position: relative;
+  font-family: Purisa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 46px;
+
+  color: #000000;
+}
+
+ul {
+  position: relative;
+  margin-left: 150px;
+  top: 40px;
+}
+
+.nav-item {
+  position: relative;
+  width: 107px;
+  height: 56px;
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  align-self: center;
+  margin-right: 50px;
+  color: black;
+}
+
+.active-link {
+  position: relative;
+  width: 107px !important;
+  height: 156px !important;
+
+  background: #cffcdb;
+
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  align-items: center;
+  color: black;
+}
+
+.nav-each {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-each:hover {
+  color: burlywood;
+}
