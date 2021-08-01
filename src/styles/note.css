@@ -1,0 +1,72 @@
+.note-wrapper {
+  position: relative;
+  height: 35vh;
+
+  background: #ffffff;
+}
+
+.written {
+  position: relative;
+
+  font-family: Purisa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 2.625rem;
+
+  color: #000000;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.buttonnote {
+  position: relative;
+  width: 16.375em;
+  height: 5.125rem;
+  left: 5rem;
+  top: 13rem;
+
+  background: #cffcdb;
+  border-radius: 50px;
+  color: black;
+}
+
+.writeme {
+  height: 40vh;
+}
+
+.iconplus {
+  height: 30px;
+  width: 50px;
+}
+
+@media (max-width: 768px) {
+  .buttonnote {
+    position: relative;
+    width: 8em;
+    height: 2rem;
+    left: 7rem;
+    top: 2rem;
+    font-size: 0.9rem;
+
+    background: #cffcdb;
+    border-radius: 50px;
+    color: black;
+  }
+
+  .written {
+    position: relative;
+
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+
+  .writeme {
+    height: 20vh;
+  }
+  .iconplus {
+    height: 16px;
+    width: 14px;
+  }
+}

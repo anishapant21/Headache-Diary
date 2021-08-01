@@ -1,0 +1,37 @@
+.weather-date {
+  display: flex;
+}
+
+.upper-head {
+  height: 20vh;
+}
+
+.weather-logo {
+  height: 120px;
+  width: 120px;
+}
+.temp {
+  font-size: 20px;
+}
+
+.date {
+  font-size: 30px;
+  font-family: Purisa;
+  font-style: normal;
+  font-weight: normal;
+}
+@media (max-width: 768px) {
+  .upper-head {
+    height: 12vh;
+  }
+  .weather-logo {
+    height: 50px;
+    width: 50px;
+  }
+  .temp {
+    font-size: 14px;
+  }
+  .date {
+    font-size: 16px;
+  }
+}

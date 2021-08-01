@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import History from "./Components/History";
 import Insights from "./Components/Insights";
+import Header from "./Components/Header";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Navbar />
+            <Header />
           </Route>
         </Switch>
       </div>
