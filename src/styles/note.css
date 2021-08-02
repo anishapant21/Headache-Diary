@@ -25,7 +25,7 @@
   width: 16.375em;
   height: 5.125rem;
   left: 5rem;
-  top: 13rem;
+  top: 8rem;
 
   background: #cffcdb;
   border-radius: 50px;
@@ -47,7 +47,7 @@
     width: 8em;
     height: 2rem;
     left: 7rem;
-    top: 2rem;
+    top: 0.5rem;
     font-size: 0.9rem;
 
     background: #cffcdb;
@@ -58,7 +58,7 @@
   .written {
     position: relative;
 
-    font-size: 0.9rem;
+    font-size: 0.83rem;
     line-height: 1.5rem;
   }
 
