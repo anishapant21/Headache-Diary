@@ -1,12 +1,19 @@
 import React from "react";
 import "../styles/headacheform.css";
 import { useToggle } from "../Context/LogContext.js";
+import {useForm} from "react-hook-form";
 
 function HeadacheForm() {
   const toggleLog = useToggle();
+  const {register, handleSubmit} = useForm();
+  const onSubmit = (d) =>{
+      console.log(d)
+      toggleLog()
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-row eachline">
           <div className="form-group col-md-3 col-lg-4 col-5 line">
             <label for="inputTemp">Temperature</label>
@@ -15,6 +22,7 @@ function HeadacheForm() {
               className="form-control"
               id="inputTemp"
               placeholder="24"
+              {...register("temp")}
               disabled
             />
           </div>
@@ -25,6 +33,7 @@ function HeadacheForm() {
               className="form-control"
               id="inputWeather"
               placeholder="Cloudy"
+              {...register("weather")}
             />
           </div>
         </div>
@@ -37,6 +46,7 @@ function HeadacheForm() {
               className="form-control"
               id="inputDate"
               placeholder="2020-04-23"
+              {...register("date")}
             />
           </div>
           <div className="form-group col-md-6 col-lg-4">
@@ -46,6 +56,7 @@ function HeadacheForm() {
               className="form-control"
               id="inputTime"
               placeholder="20:15"
+              {...register("time")}
             />
           </div>
         </div>
@@ -53,13 +64,13 @@ function HeadacheForm() {
           <label for="customRange1" class="form-label eachline">
             Pain Level
           </label>
-          <input type="range" class="form-range eachline" id="customRange1" />
+          <input type="range" class="form-range eachline" id="customRange1" {...register("pain")} />
         </div>
 
         <div className="form-row eachline">
           <div className="form-group col-md-4 col-lg-4 col-5 line">
             <label for="inputState">Started at</label>
-            <select id="inputState" className="form-control">
+            <select id="inputState" className="form-control" {...register("start")}>
               <option selected>Choose...</option>
               <option>Before wakeup</option>
               <option>Before 12</option>
@@ -71,7 +82,7 @@ function HeadacheForm() {
           </div>
           <div className="form-group col-md-4 col-lg-4 col-5 line">
             <label for="inputState">Type of</label>
-            <select id="inputState" className="form-control">
+            <select id="inputState" className="form-control" {...register("type")}>
               <option selected>Choose...</option>
               <option>Summer</option>
               <option>Migraine</option>
@@ -85,7 +96,7 @@ function HeadacheForm() {
         <div className="form-row eachline">
           <div className="form-group col-md-4 col-lg-4 col-5 line">
             <label for="inputState">Location</label>
-            <select id="inputState" className="form-control">
+            <select id="inputState" className="form-control" {...register("location")}>
               <option selected>Choose...</option>
               <option>Left</option>
               <option>Right</option>
@@ -94,7 +105,7 @@ function HeadacheForm() {
           </div>
           <div className="form-group col-md-4 col-lg-4 col-5 line">
             <label for="inputState">Symptoms</label>
-            <select id="inputState" className="form-control">
+            <select id="inputState" className="form-control" {...register("symptoms")}>
               <option selected>Choose...</option>
               <option>Weakness</option>
               <option>Lethargy</option>
@@ -108,7 +119,7 @@ function HeadacheForm() {
         <div className="form-row eachline">
           <div className="form-group col-md-4 col-lg-4 col-5 line">
             <label for="inputState">Possible Triggers</label>
-            <select id="inputState" className="form-control">
+            <select id="inputState" className="form-control" {...register("triggers")}>
               <option selected>Choose...</option>
               <option>Work</option>
               <option>Stress</option>
@@ -118,7 +129,7 @@ function HeadacheForm() {
           </div>
           <div className="form-group col-md-4 col-lg-4 col-5 line">
             <label for="inputState">Outdoors</label>
-            <select id="inputState" className="form-control">
+            <select id="inputState" className="form-control" {...register("outdoors")}>
               <option selected>Choose...</option>
               <option>Yes</option>
               <option>No</option>
@@ -136,7 +147,8 @@ function HeadacheForm() {
                 type="radio"
                 name="gridRadios"
                 id="gridRadios1"
-                value="option1"
+                value="yes"
+                {...register("medicine")}
               />
               <label class="form-check-label" for="gridRadios1">
                 Yes
@@ -148,7 +160,8 @@ function HeadacheForm() {
                 type="radio"
                 name="gridRadios"
                 id="gridRadios2"
-                value="option2"
+                value="no"
+                {...register("medicine")}
               />
               <label class="form-check-label" for="gridRadios2">
                 No
@@ -157,9 +170,9 @@ function HeadacheForm() {
           </div>
           <div className="form-group col-md-4 col-lg-6 col-6 line">
             <button
-              type="button"
+              type="submit"
+              value="submit"
               className="btn btn-info buttonsave"
-              onClick={toggleLog}
             >
               Save
             </button>

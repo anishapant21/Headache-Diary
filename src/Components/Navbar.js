@@ -1,8 +1,9 @@
 import React from "react";
 import "../styles/navbar.css";
 import { useHistory, NavLink } from "react-router-dom";
+import {AiOutlineLogout} from "react-icons/ai"
 
-function Navbar() {
+function Navbar({handleLogout}) {
   const history = useHistory();
   return (
     <div>
@@ -60,9 +61,22 @@ function Navbar() {
                   </NavLink>
                 </div>
               </li>
+              <li className="nav-item">
+                <div className="nav-link">
+                  <NavLink
+                    className="nav-each"
+                    to="/"
+                  >
+                    <AiOutlineLogout onClick={()=>handleLogout()} />
+                  
+                  </NavLink>
+                </div>
+              </li>
             </ul>
           </div>
+          
         </div>
+        
       </nav>
     </div>
   );

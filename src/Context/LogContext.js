@@ -15,7 +15,6 @@ export function LogProvider({ children }) {
   const [logButts, setLogButts] = useState(true);
 
   const toggleLog = () => {
-    console.log("here");
     setLogButts(!logButts);
   };
 

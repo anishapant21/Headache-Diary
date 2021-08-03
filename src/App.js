@@ -1,11 +1,12 @@
 import Navbar from "./Components/Navbar";
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import History from "./Components/History";
 import Insights from "./Components/Insights";
 import Header from "./Components/Header";
-import {LogProvider} from "./Context/LogContext.js"
+import {LogProvider} from "./Context/LogContext.js";
+import Login from "./Components/Login";
 
 function App() {
 
@@ -27,10 +28,10 @@ function App() {
             <Insights />
           </Route>
         </Switch>
+        
         <Switch>
           <Route exact path="/">
-            <Navbar />
-            <Header />
+            <Login />
           </Route>
         </Switch>
       </div>
