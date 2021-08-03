@@ -28,7 +28,12 @@ function App() {
             <Insights />
           </Route>
         </Switch>
-        
+        <Switch>
+          <Route exact path="/home">
+            <Navbar />
+            <Header />
+          </Route>
+        </Switch>
         <Switch>
           <Route exact path="/">
             <Login />

@@ -31,7 +31,7 @@ function Navbar({handleLogout}) {
                     exact
                     activeClassName="active-link"
                     className="nav-each"
-                    to="/"
+                    to="/home"
                   >
                     Home
                   </NavLink>
@@ -67,7 +67,7 @@ function Navbar({handleLogout}) {
                     className="nav-each"
                     to="/"
                   >
-                    <AiOutlineLogout onClick={()=>handleLogout()} />
+                    <AiOutlineLogout onClick={handleLogout} />
                   
                   </NavLink>
                 </div>

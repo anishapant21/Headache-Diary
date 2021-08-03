@@ -12,3 +12,9 @@
   // Initialize Firebase
   const fire= firebase.initializeApp(firebaseConfig);
   export default fire;
+
+  var database = firebase.database();
+  var ref=database.ref('aches');
+
+  
+

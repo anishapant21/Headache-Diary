@@ -2,12 +2,30 @@ import React from "react";
 import "../styles/headacheform.css";
 import { useToggle } from "../Context/LogContext.js";
 import {useForm} from "react-hook-form";
+import firebase from "firebase";
+
 
 function HeadacheForm() {
   const toggleLog = useToggle();
   const {register, handleSubmit} = useForm();
+  const database = firebase.database();
   const onSubmit = (d) =>{
       console.log(d)
+      var dataset={
+        temp:d.temp,
+        weather: d.weather,
+        date:d.date,
+        time:d.time,
+        start:d.start,
+        type:d.type,
+        location:d.location,
+        symptoms:d.symptoms,
+        triggers:d.triggers,
+        outdoors: d.outdoors,
+        medicine:d.medicine
+      }
+      var ref=database.ref('aches');
+      ref.push(dataset)
       toggleLog()
   };
 
@@ -23,7 +41,6 @@ function HeadacheForm() {
               id="inputTemp"
               placeholder="24"
               {...register("temp")}
-              disabled
             />
           </div>
           <div className="form-group col-md-6 col-lg-4 col-5">
