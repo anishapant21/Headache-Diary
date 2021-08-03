@@ -1,12 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function History() {
-    return (
-        <div>
-            Hi I AM HISTORY
-            
-        </div>
-    )
+  return <div>Hi I AM HISTORY</div>;
 }
 
 export default History;

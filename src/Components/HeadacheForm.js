@@ -1,7 +1,9 @@
 import React from "react";
 import "../styles/headacheform.css";
+import { useToggle } from "../Context/LogContext.js";
 
 function HeadacheForm() {
+  const toggleLog = useToggle();
   return (
     <>
       <form>
@@ -154,7 +156,11 @@ function HeadacheForm() {
             </div>
           </div>
           <div className="form-group col-md-4 col-lg-6 col-6 line">
-            <button type="button" className="btn btn-info buttonsave">
+            <button
+              type="button"
+              className="btn btn-info buttonsave"
+              onClick={toggleLog}
+            >
               Save
             </button>
           </div>

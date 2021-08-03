@@ -25,21 +25,39 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-5">
               <li className="nav-item">
-                <div className="nav-link" >
-                    <NavLink exact activeClassName="active-link" className="nav-each" to="/"> Home</NavLink>
-                  
+                <div className="nav-link">
+                  <NavLink
+                    exact
+                    activeClassName="active-link"
+                    className="nav-each"
+                    to="/"
+                  >
+                    Home
+                  </NavLink>
                 </div>
               </li>
               <li className="nav-item">
                 <div className="nav-link">
-                    <NavLink exact activeClassName="active-link" className="nav-each" to="/history"> History</NavLink>
-                  
+                  <NavLink
+                    exact
+                    activeClassName="active-link"
+                    className="nav-each"
+                    to="/history"
+                  >
+                    History
+                  </NavLink>
                 </div>
               </li>
               <li className="nav-item">
                 <div className="nav-link">
-                    <NavLink exact activeClassName="active-link" className="nav-each" to="/insights">Insights</NavLink>
-                
+                  <NavLink
+                    exact
+                    activeClassName="active-link"
+                    className="nav-each"
+                    to="/insights"
+                  >
+                    Insights
+                  </NavLink>
                 </div>
               </li>
             </ul>
