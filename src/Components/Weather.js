@@ -1,7 +1,9 @@
 //7c206eea4a416664649e7ec4cfac7dd8
 
+import { render } from "@testing-library/react";
 import React, { useState, useEffect } from "react";
-import { WiDayCloudy } from "react-icons/wi";
+import { WiDayCloudy, WiDayRain } from "react-icons/wi";
+
 import "../styles/weather.css";
 
 function Weather() {
@@ -17,13 +19,15 @@ function Weather() {
     });
   }, []);
 
-  console.log(lat);
-  console.log(lon);
   const date = new Date();
-  console.log(date);
-  console.log(date.toISOString().split("T")[0]);
+
   const month = date.toLocaleString("default", { month: "long" });
-  console.log(month);
+  var weekday = date.toLocaleString("default", { weekday: "long" })
+  
+
+  const year = date.getFullYear();
+  const day = date.getDate();
+  
 
   useEffect(() => {
     if ((lat != null) & (lon != null)) {
@@ -41,16 +45,28 @@ function Weather() {
       fetchApi();
     }
   }, [lat, lon]);
+  let renderHere;
+  if (weather === "Clouds") {
+    renderHere = <WiDayCloudy className="weather-logo" />;
+  } else if (weather === "Rain") {
+    renderHere = <WiDayRain className="weather-logo" />;
+  }
   return (
     <div className="d-flex justify-content-between">
       <div className=" upper-head">
-        <WiDayCloudy className="weather-logo" />
+        {renderHere}
         <div className="temp">
           {temp} c, {weather}
         </div>
       </div>
 
-      <div className="date">24 June, 2020</div>
+      <div className="date">
+      {weekday}
+      </div>
+      <div className="date">
+        {day} {month}, {year}
+      </div>
+     
     </div>
   );
 }

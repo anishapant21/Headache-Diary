@@ -7,6 +7,8 @@ import Insights from "./Components/Insights";
 import Header from "./Components/Header";
 import {LogProvider} from "./Context/LogContext.js";
 import Login from "./Components/Login";
+import Home from "./Components/Home";
+import Summary from "./Components/Summary";
 
 function App() {
 
@@ -32,6 +34,7 @@ function App() {
           <Route exact path="/home">
             <Navbar />
             <Header />
+            <Summary />
           </Route>
         </Switch>
         <Switch>

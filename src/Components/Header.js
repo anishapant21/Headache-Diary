@@ -13,8 +13,8 @@ function Header() {
   if (logButts) {
     renderMe = (
       <div className="header-wrapper container-fluid">
-        <div className="col-lg-7 offset-lg-2 col-12 mt-5 ml-2 mr-2">
-          <div className="card">
+        <div className="col-lg-7 offset-lg-2 col-12 mt-5 ml-2 mr-2 ">
+          <div className="card headstate">
             <div className="card-body">
               <div className="col-lg-12">
                 <Weather />

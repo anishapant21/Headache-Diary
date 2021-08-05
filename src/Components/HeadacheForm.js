@@ -59,10 +59,9 @@ function HeadacheForm() {
           <div className="form-group col-md-3 col-lg-4 col-6 line">
             <label for="inputDate">Date</label>
             <input
-              type="date"
               className="form-control"
               id="inputDate"
-              placeholder="2020-04-23"
+              type="date"
               {...register("date")}
             />
           </div>

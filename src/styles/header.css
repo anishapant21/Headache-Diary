@@ -11,8 +11,15 @@
   border-radius: 20px;
 }
 
+.headstate {
+  margin-left: 100px;
+}
+
 @media (max-width: 768px) {
   .card-body {
     height: 78vh;
+  }
+  .headstate {
+    margin-left: 0px;
   }
 }

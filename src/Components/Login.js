@@ -4,6 +4,8 @@ import LoginHere from "../Firebase/LoginHere.js";
 import fire from "../Firebase/fire.js"
 import Header from './Header';
 import Navbar from './Navbar';
+import Summary from './Summary';
+import Home from './Home';
 
 function Login() {
     const [user, setUser] = useState('');
@@ -85,8 +87,10 @@ function Login() {
              <div className="App">
       {user? (
           <>
-          <Navbar handleLogout={handleLogout} />
-        <Header />
+          <Home handleLogout={handleLogout} />
+          {/* <Navbar handleLogout={handleLogout} />
+        <Header /> */}
+      
         </>
 
       ): 

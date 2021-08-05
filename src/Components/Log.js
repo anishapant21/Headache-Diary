@@ -1,9 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/log.css";
 import { useToggle } from "../Context/LogContext.js";
-function Log() {
-  const toggleLog = useToggle();
+import firebase from "firebase";
 
+function Log() {
+  const [days, setDays] = useState(0);
+  const toggleLog = useToggle();
+  
+  const database = firebase.database();
+  var ref = database.ref("aches");
+  ref.on("value", gotData, errData);
+  var datadate;
+
+  function errData(err) {
+    console.log("Error");
+  }
+  var difinday;
+
+  
+  function gotData(data) {
+    var dataAches = data.val();
+
+    //calculates the number of days
+    const callmemaybe = () => {
+      var keys = Object.keys(dataAches);
+      const e = keys[keys.length - 1];
+      datadate = dataAches[e].date;
+      console.log(datadate);
+      const currDate = new Date(datadate);
+
+      var currmid = currDate.toISOString().split("T")[0].split("-");
+      var curfin = currmid[1] + "/" + currmid[2] + "/" + currmid[0];
+
+      const curfind = new Date(curfin);
+
+      const todayDate = new Date();
+
+      console.log(todayDate);
+      var difINtime = Math.abs(todayDate.getTime() - curfind.getTime());
+      difinday = Math.round(difINtime / (1000 * 3600 * 24));
+    };
+
+    if (dataAches != null) {
+      callmemaybe();
+    }
+  }
+
+  useEffect(() => {
+    setDays(difinday);
+  });
   return (
     <div className="col-lg-5 offset-lg-1 cold-md-6 col-12">
       <div className="circle">
@@ -11,7 +56,7 @@ function Log() {
           <p>
             Last Headache
             <br />
-            41 DAYS
+            {days} DAYS
             <br />
             ago
           </p>
