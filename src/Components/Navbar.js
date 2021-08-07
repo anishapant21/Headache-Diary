@@ -64,7 +64,7 @@ function Navbar({handleLogout}) {
               <li className="nav-item">
                 <div className="nav-link">
                   <NavLink
-                    className="nav-each"
+                    className="nav-each logout"
                     to="/"
                   >
                     <AiOutlineLogout onClick={handleLogout} />

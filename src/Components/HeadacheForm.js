@@ -17,6 +17,7 @@ function HeadacheForm() {
         date:d.date,
         time:d.time,
         start:d.start,
+        pain:d.pain,
         type:d.type,
         location:d.location,
         symptoms:d.symptoms,

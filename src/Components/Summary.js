@@ -5,6 +5,7 @@ import Doughnuts from "./Doughnuts";
 import "../styles/Summary.css";
 
 function Summary() {
+  const [seeAll, setSeeAll] = useState(true);
   const [typeState, setTypeState] = useState([]);
   const [typeCounts, setTypeCounts] = useState([]);
   const [sympState, setSympState] = useState([]);
@@ -24,11 +25,10 @@ function Summary() {
   var symptoms;
   var sympVal;
   var sympCount;
-  
 
   useEffect(() => {
     var listtypes = [];
-    var listSymptoms=[];
+    var listSymptoms = [];
     ref.on("value", gotData, errData);
     function gotData(data) {
       var dataAches = data.val();
@@ -49,10 +49,9 @@ function Summary() {
           symptoms = dataAches[x].symptoms;
           //check this //////the data is getting pushed on each refresh
           listSymptoms.push(symptoms);
-          
         }
 
-        console.log(listSymptoms)
+        console.log(listSymptoms);
         ///////////// For TYPES OF HEADACHES /////
 
         const map = listtypes.reduce(
@@ -65,7 +64,6 @@ function Summary() {
         setTypeCounts(typesCount);
         //////////////////////////////////////////
 
-
         ///////////// For SYMPTOMS /////
 
         const mapSymp = listSymptoms.reduce(
@@ -76,8 +74,8 @@ function Summary() {
         setSympState(sympVal);
         sympCount = [...mapSymp.values()];
         setSympCounts(sympCount);
-        console.log("I am symptoms", sympState)
-        console.log( "I am symptoms",sympCounts)
+        console.log("I am symptoms", sympState);
+        console.log("I am symptoms", sympCounts);
         //////////////////////////////////////////
       };
 
@@ -86,6 +84,67 @@ function Summary() {
       }
     }
   }, []);
+  var renderme;
+  if (seeAll === true) {
+    renderme = (
+      <div>
+        <div className="row container-fluid piebox">
+          <div className="col-lg-4 offset-lg-3 col-12 eachpie">
+            <Doughnuts
+              typesVal={typeState}
+              typesCount={typeCounts}
+              width={200}
+              height={200}
+            />
+          </div>
+          <div className="col-lg-4 col-12 eachpie">
+            <Doughnuts typesVal={sympState} typesCount={sympCounts} />
+          </div>
+        </div>
+        <div className="  text-center">
+          <button
+            type="button"
+            class="seeall btn "
+            onClick={() => setSeeAll(!seeAll)}
+          >
+            SEE ALL
+          </button>
+        </div>
+      </div>
+    );
+  } else if (seeAll === false) {
+    renderme = (
+      <div>
+        {" "}
+        <div className="row container-fluid piebox">
+          <div className="col-lg-4 offset-lg-3 col-12 eachpie">
+            <Doughnuts
+              typesVal={typeState}
+              typesCount={typeCounts}
+              width={200}
+              height={200}
+            />
+          </div>
+          <div className="col-lg-4 col-12 eachpie">
+            <Doughnuts typesVal={sympState} typesCount={sympCounts} />
+          </div>
+        </div>
+        <div className="row container-fluid piebox">
+          <div className="col-lg-4 offset-lg-3 col-12 eachpie">
+            <Doughnuts
+              typesVal={typeState}
+              typesCount={typeCounts}
+              width={200}
+              height={200}
+            />
+          </div>
+          <div className="col-lg-4 col-12 eachpie">
+            <Doughnuts typesVal={sympState} typesCount={sympCounts} />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="summary-wrapper">
@@ -95,29 +154,7 @@ function Summary() {
           <hr className="w-50 mx-auto pb-1 mb-5"></hr>
         </div>
       </div>
-      <div className="row container-fluid piebox">
-        <div className="col-lg-4 offset-lg-3 col-12 eachpie">
-          <Doughnuts
-            typesVal={typeState}
-            typesCount={typeCounts}
-            width={200}
-            height={200}
-           
-          />
-        </div>
-        <div className="col-lg-4 col-12 eachpie">
-          <Doughnuts
-            typesVal={sympState}
-            typesCount={sympCounts}
-           
-          />
-        </div>
-      </div>
-      <div className="  text-center">
-        <button type="button" class="seeall btn ">
-          SEE ALL
-        </button>
-      </div>
+      {renderme}
     </div>
   );
 }

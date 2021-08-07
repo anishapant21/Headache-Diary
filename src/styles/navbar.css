@@ -54,3 +54,20 @@ ul {
 .nav-each:hover {
   color: burlywood;
 }
+
+.logout {
+  margin-left: 180px;
+}
+
+.navbar-brand {
+  margin-left: 60px;
+}
+@media (max-width: 768px) {
+  .navbar-brand {
+    margin-left: 0px;
+  }
+
+  .logout {
+    margin-left: 0px;
+  }
+}
