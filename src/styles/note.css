@@ -22,10 +22,10 @@
 
 .buttonnote {
   position: relative;
-  width: 16.375em;
+  width: 15.375em;
   height: 5.125rem;
-  left: 5rem;
-  top: 8rem;
+  left: 2rem;
+  top: 4rem;
 
   background: #cffcdb;
   border-radius: 50px;
@@ -44,7 +44,7 @@
 @media (max-width: 768px) {
   .buttonnote {
     position: relative;
-    width: 9em;
+    width: 6em;
     height: 2rem;
     left: 7rem;
     top: 0.5rem;

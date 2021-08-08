@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { dataAches } from "../Firebase/fire.js";
 import Table from "./Table.js";
@@ -6,7 +6,6 @@ import "../styles/history.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
-import { useEffect } from "react/cjs/react.development";
 
 function History() {
   const [selectType, setSelectType] = useState("all");
