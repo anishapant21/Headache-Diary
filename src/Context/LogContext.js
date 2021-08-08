@@ -1,5 +1,4 @@
-import React, { useState, createContext } from "react";
-import { useContext } from "react/cjs/react.development";
+import React, { useState, createContext, useContext } from "react";
 
 const LogContext = createContext();
 const ToggleContext = createContext();
