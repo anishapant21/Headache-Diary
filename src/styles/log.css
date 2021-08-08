@@ -1,66 +1,66 @@
 .circle {
-  height: 225px;
-  width: 225px;
+  height: 14.063rem;
+  width: 14.063rem;
   background: #f9dcdc;
   border-radius: 50%;
-  margin-left: 20px;
-  margin-top: 30px;
+  margin-left: 1.25rem;
+  margin-top: 1.87rem;
 }
 
 .days {
   position: absolute;
-  padding-top: 20px;
+  padding-top: 1.25rem;
   vertical-align: middle;
   display: table-cell;
 }
 
 .center {
-  width: 200px;
-  height: 200px;
+  width: 12.5rem;
+  height: 12.5rem;
   display: flex;
   align-items: center;
   text-align: center;
   align-self: center;
   align-content: center;
-  margin-left: 30px;
-  padding-top: 60px;
-  font-size: 25px;
+  margin-left: 1.875rem;
+  padding-top: 3.75rem;
+  font-size: 1.563rem;
 }
 
 .buttonlog {
-  height: 60px;
-  width: 300px;
-  margin-top: 40px;
-  font-size: 25px;
+  height: 3.75rem;
+  width: 18.75rem;
+  margin-top: 2.5rem;
+  font-size: 1.563rem;
 }
 
 @media (max-width: 768px) {
   .circle {
-    margin-top: 20px;
-    margin-left: 70px;
-    height: 160px;
-    width: 160px;
+    margin-top: 0.8rem;
+    margin-left: 4.375rem;
+    height: 9rem;
+    width: 9rem;
     background: #f9dcdc;
     border-radius: 50%;
   }
 
   .center {
-    width: 200px;
-    height: 200px;
+    width: 12.5rem;
+    height: 12.5rem;
     display: flex;
     align-items: center;
     text-align: center;
     align-self: center;
     align-content: center;
-    margin-left: 28px;
+    margin-left: 1.5rem;
     padding-top: 0px;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .buttonlog {
-    height: 60px;
-    width: 250px;
-    margin-top: 10px;
-    margin-left: 30px;
+    height: 3.75rem;
+    width: 15.625rem;
+    margin-top: 0.625rem;
+    margin-left: 1.875rem;
   }
 }

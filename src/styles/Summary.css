@@ -1,22 +1,22 @@
 .piebox {
   width: 80vw;
-  margin-bottom: 100px;
+  margin-bottom: 6.25rem;
 }
 
 .eachpie {
-  margin-bottom: 40px;
-  margin-right: 60px;
+  margin-bottom: 2.5rem;
+  margin-right: 2vw;
 }
 
 .summary-wrapper {
-  margin-top: 150px;
+  margin-top: 9.375rem;
 }
 
 .seeall {
-  width: 400px;
-  font-size: 25px;
+  width: 25rem;
+  font-size: 1.563rem;
   background-color: #95a3b3;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .cardmein {
@@ -29,13 +29,13 @@
     width: 100vw;
   }
   .summary-wrapper {
-    margin-top: 80px;
+    margin-top: 5rem;
   }
 
   .seeall {
-    width: 200px;
-    font-size: 25px;
+    width: 12.5rem;
+    font-size: 1.563rem;
     background-color: #95a3b3;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 }

@@ -1,17 +1,17 @@
 .table-wrapper {
-  margin-top: 50px;
+  margin-top: 3.125rem;
   overflow: auto;
   height: 40rem;
 }
 
 .filter {
   display: flex;
-  margin-top: 100px;
-  margin-left: 600px;
+  margin-top: 6.25rem;
+  margin-left: 28vw;
 }
 
 .filtereach {
-  margin-right: 50px;
+  margin-right: 3.125rem;
 }
 
 th {
@@ -21,12 +21,12 @@ th {
 @media (max-width: 768px) {
   .filtereach {
     margin-right: 0px;
-    font-size: 10px;
+    font-size: 0.625rem;
   }
   .filter {
     display: inline-flexbox;
     margin-left: 0px;
-    margin-top: 40px;
-    font-size: 10px;
+    margin-top: 2.5rem;
+    font-size: 0.625rem;
   }
 }
