@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import { useContext } from "react/cjs/react.development";
 
-const LogContext = React.createContext();
-const ToggleContext = React.createContext();
+const LogContext = createContext();
+const ToggleContext = createContext();
 
 export function useLog() {
   return useContext(LogContext);
