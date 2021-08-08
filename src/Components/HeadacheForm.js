@@ -2,9 +2,11 @@ import React from "react";
 import "../styles/headacheform.css";
 import { useToggle } from "../Context/LogContext.js";
 import { useForm } from "react-hook-form";
-import firebase from "firebase";
+//import firebase from "firebase";
+import firebase from 'firebase/app';
 import 'firebase/database'; // If using Firebase database
 import 'firebase/storage';  // If using Firebase storage
+import 'firebase/auth';
 
 function HeadacheForm() {
   const toggleLog = useToggle();

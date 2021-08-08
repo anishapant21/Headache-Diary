@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import firebase from "firebase";
+//import firebase from "firebase";
+import firebase from 'firebase/app';
 import 'firebase/database'; // If using Firebase database
 import 'firebase/storage';  // If using Firebase storage
+import 'firebase/auth';
 import { useEffect } from "react/cjs/react.development";
 import Doughnuts from "./Doughnuts";
 import "../styles/Summary.css";

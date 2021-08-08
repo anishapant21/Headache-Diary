@@ -3,9 +3,11 @@ import "../styles/note.css";
 import { useForm } from "react-hook-form";
 
 import { FiFilePlus } from "react-icons/fi";
-import firebase from "firebase";
+//import firebase from "firebase";
+import firebase from 'firebase/app';
 import 'firebase/database'; // If using Firebase database
 import 'firebase/storage';  // If using Firebase storage
+import 'firebase/auth';
 
 function Note() {
   const [note, setNote] = useState("DRINK PLENTY OF WATER YOU’LL FEEL BETTER");

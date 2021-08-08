@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../styles/log.css";
 import { useToggle } from "../Context/LogContext.js";
-import firebase from "firebase";
+//import firebase from "firebase";
+import firebase from 'firebase/app';
 import 'firebase/database'; // If using Firebase database
 import 'firebase/storage';  // If using Firebase storage
 
+import 'firebase/auth';
 function Log() {
   const [days, setDays] = useState(0);
   const toggleLog = useToggle();
@@ -49,7 +51,7 @@ function Log() {
 
   useEffect(() => {
     setDays(difinday);
-  });
+  }, [difinday]);
   return (
     <div className="col-lg-5 offset-lg-1 cold-md-6 col-12">
       <div className="circle">

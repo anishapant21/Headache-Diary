@@ -22,7 +22,7 @@ function History() {
   useEffect(()=>{
     
   })
-  if (dataAches !=undefined){
+  if (dataAches !==undefined){
     var keys = Object.keys(dataAches);
   var selectKeys;
   handleSelectType = (e) => {
