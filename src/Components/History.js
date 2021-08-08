@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import { dataAches } from "../Firebase/fire.js";
 import Table from "./Table.js";
@@ -94,70 +94,89 @@ function History() {
   });
 
   return (
-    <>
+    <div className="history-wrapper">
       <div className="filter">
-        <button
-          type="button"
-          class="btn btn-primary filtereach"
-          onClick={() => setSelectType("all")}
-        >
-          All
-        </button>
-        <DropdownButton
-          title="Type of"
-          id="dropdown-menu-align-right"
-          onSelect={handleSelectType}
-        >
-          <Dropdown.Item eventKey="Summer">Summer</Dropdown.Item>
-          <Dropdown.Item eventKey="Migraine">Migraine</Dropdown.Item>
-          <Dropdown.Item eventKey="Sharp">Sharp</Dropdown.Item>
-          <Dropdown.Item eventKey="Throbbing">Throbbing</Dropdown.Item>
-          <Dropdown.Item eventKey="Dull">Dull</Dropdown.Item>
-        </DropdownButton>
+        <div>
+          <button
+            type="button"
+            class="btn btn-primary filtereach"
+            onClick={() => setSelectType("all")}
+          >
+            All
+          </button>
+        </div>
 
-        <DropdownButton
-          title="Location"
-          id="dropdown-menu-align-right"
-          onSelect={handleSelectLocation}
-        >
-          <Dropdown.Item eventKey="Left">Left</Dropdown.Item>
-          <Dropdown.Item eventKey="Right">Right</Dropdown.Item>
-          <Dropdown.Item eventKey="Both">Both</Dropdown.Item>
-        </DropdownButton>
-        <DropdownButton
-          title="Triggers"
-          id="dropdown-menu-align-right"
-          onSelect={handleSelectTrigger}
-        >
-          <Dropdown.Item eventKey="Work">Work</Dropdown.Item>
-          <Dropdown.Item eventKey="Stress">Stress</Dropdown.Item>
-          <Dropdown.Item eventKey="Screen">Screen</Dropdown.Item>
-          <Dropdown.Item eventKey="Hungry">Hungry</Dropdown.Item>
-        </DropdownButton>
+        <div className="filtereach">
+          <DropdownButton
+            title="Type"
+            id="dropdown-menu-align-right"
+            variant="info"
+            onSelect={handleSelectType}
+          >
+            <Dropdown.Item eventKey="Summer">Summer</Dropdown.Item>
+            <Dropdown.Item eventKey="Migraine">Migraine</Dropdown.Item>
+            <Dropdown.Item eventKey="Sharp">Sharp</Dropdown.Item>
+            <Dropdown.Item eventKey="Throbbing">Throbbing</Dropdown.Item>
+            <Dropdown.Item eventKey="Dull">Dull</Dropdown.Item>
+          </DropdownButton>
+        </div>
+        <div className="filtereach">
+          <DropdownButton
+            title="Location"
+            id="dropdown-menu-align-right"
+            variant="info"
+            onSelect={handleSelectLocation}
+          >
+            <Dropdown.Item eventKey="Left">Left</Dropdown.Item>
+            <Dropdown.Item eventKey="Right">Right</Dropdown.Item>
+            <Dropdown.Item eventKey="Both">Both</Dropdown.Item>
+          </DropdownButton>
+        </div>
 
-        <DropdownButton
-          title="Outdoors"
-          id="dropdown-menu-align-right"
-          onSelect={handleSelectOutdoors}
-        >
-          <Dropdown.Item eventKey="Yes">Yes</Dropdown.Item>
-          <Dropdown.Item eventKey="No">No</Dropdown.Item>
-        </DropdownButton>
-        <DropdownButton
-          title="Medicines"
-          id="dropdown-menu-align-right"
-          onSelect={handleSelectMedicines}
-        >
-          <Dropdown.Item eventKey="yes">Yes</Dropdown.Item>
-          <Dropdown.Item eventKey="no">No</Dropdown.Item>
-        </DropdownButton>
+        <div className="filtereach">
+          <DropdownButton
+            title="Triggers"
+            id="dropdown-menu-align-right"
+            variant="info"
+            onSelect={handleSelectTrigger}
+          >
+            <Dropdown.Item eventKey="Work">Work</Dropdown.Item>
+            <Dropdown.Item eventKey="Stress">Stress</Dropdown.Item>
+            <Dropdown.Item eventKey="Screen">Screen</Dropdown.Item>
+            <Dropdown.Item eventKey="Hungry">Hungry</Dropdown.Item>
+          </DropdownButton>
+        </div>
+
+        <div className="filtereach">
+          <DropdownButton
+            title="Outdoors"
+            id="dropdown-menu-align-right"
+            variant="info"
+            onSelect={handleSelectOutdoors}
+          >
+            <Dropdown.Item eventKey="Yes">Yes</Dropdown.Item>
+            <Dropdown.Item eventKey="No">No</Dropdown.Item>
+          </DropdownButton>
+        </div>
+
+        <div className="filtereach">
+          <DropdownButton
+            title="Medicines"
+            id="dropdown-menu-align-right"
+            variant="info"
+            onSelect={handleSelectMedicines}
+          >
+            <Dropdown.Item eventKey="yes">Yes</Dropdown.Item>
+            <Dropdown.Item eventKey="no">No</Dropdown.Item>
+          </DropdownButton>
+        </div>
       </div>
 
-      <div className=" col-lg-9 offset-lg-1 table-responsive-sm table-wrapper">
-        <table class="table table-striped">
+      <div className=" col-lg-8 offset-lg-2 table-responsive-sm table-wrapper">
+        <table class="table table-bordered border-danger table-striped">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col"></th>
               <th scope="col">Date</th>
               <th scope="col">Time</th>
               <th scope="col">Start</th>
@@ -172,13 +191,11 @@ function History() {
               <th scope="col">Medicine</th>
             </tr>
           </thead>
-
           <tbody>{rendermesana}</tbody>
         </table>
       </div>
-    </>
+    </div>
   );
 }
 
 export default History;
-

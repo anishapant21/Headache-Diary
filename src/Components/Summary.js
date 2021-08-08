@@ -12,8 +12,17 @@ function Summary() {
   const [sympCounts, setSympCounts] = useState([]);
   const database = firebase.database();
   var ref = database.ref("aches");
-  //   ref.on("value", gotData, errData);
-  var d;
+
+
+  //colors on doughnuts
+
+  const color1 = ["#EFE6DD", "#7EBDC2", "#F3DFA2", "#BB4430", "#55917F"];
+
+  const color2 = ["#6E2594", "#DEA47E", "#ECD444", "#D68FD6", "#8AB9B5"];
+
+  const color3 = ["#F2545B", "#A93F55", "#19323C", "#646F4B", "#B6A6CA"];
+
+  const color4 = ["#A1E8AF", "#372772", "#D3BDB0", "#D9F0FF", "#DF367C"];
 
   function errData(err) {
     console.log("Error");
@@ -93,12 +102,17 @@ function Summary() {
             <Doughnuts
               typesVal={typeState}
               typesCount={typeCounts}
+              color={color1}
               width={200}
               height={200}
             />
           </div>
           <div className="col-lg-4 col-12 eachpie">
-            <Doughnuts typesVal={sympState} typesCount={sympCounts} />
+            <Doughnuts
+              typesVal={sympState}
+              typesCount={sympCounts}
+              color={color2}
+            />
           </div>
         </div>
         <div className="  text-center">
@@ -121,12 +135,15 @@ function Summary() {
             <Doughnuts
               typesVal={typeState}
               typesCount={typeCounts}
-              width={200}
-              height={200}
+              color={color1}
             />
           </div>
           <div className="col-lg-4 col-12 eachpie">
-            <Doughnuts typesVal={sympState} typesCount={sympCounts} />
+            <Doughnuts
+              typesVal={sympState}
+              typesCount={sympCounts}
+              color={color2}
+            />
           </div>
         </div>
         <div className="row container-fluid piebox">
@@ -134,12 +151,15 @@ function Summary() {
             <Doughnuts
               typesVal={typeState}
               typesCount={typeCounts}
-              width={200}
-              height={200}
+              color={color3}
             />
           </div>
           <div className="col-lg-4 col-12 eachpie">
-            <Doughnuts typesVal={sympState} typesCount={sympCounts} />
+            <Doughnuts
+              typesVal={sympState}
+              typesCount={sympCounts}
+              color={color4}
+            />
           </div>
         </div>
       </div>

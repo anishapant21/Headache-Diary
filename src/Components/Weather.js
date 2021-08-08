@@ -1,6 +1,5 @@
 //7c206eea4a416664649e7ec4cfac7dd8
 
-import { render } from "@testing-library/react";
 import React, { useState, useEffect } from "react";
 import { WiDayCloudy, WiDayRain } from "react-icons/wi";
 
@@ -22,12 +21,10 @@ function Weather() {
   const date = new Date();
 
   const month = date.toLocaleString("default", { month: "long" });
-  var weekday = date.toLocaleString("default", { weekday: "long" })
-  
+  var weekday = date.toLocaleString("default", { weekday: "long" });
 
   const year = date.getFullYear();
   const day = date.getDate();
-  
 
   useEffect(() => {
     if ((lat != null) & (lon != null)) {
@@ -60,13 +57,10 @@ function Weather() {
         </div>
       </div>
 
-      <div className="date">
-      {weekday}
-      </div>
+      <div className="date">{weekday}</div>
       <div className="date">
         {day} {month}, {year}
       </div>
-     
     </div>
   );
 }

@@ -1,17 +1,32 @@
 .table-wrapper {
   margin-top: 50px;
-}
-
-.dropdown-menu {
-  position: relative !important;
+  overflow: auto;
+  height: 40rem;
 }
 
 .filter {
   display: flex;
   margin-top: 100px;
-  margin-left: 180px;
+  margin-left: 600px;
 }
 
 .filtereach {
   margin-right: 50px;
+}
+
+th {
+  color: rgb(120, 126, 119);
+}
+
+@media (max-width: 768px) {
+  .filtereach {
+    margin-right: 0px;
+    font-size: 10px;
+  }
+  .filter {
+    display: inline-flexbox;
+    margin-left: 0px;
+    margin-top: 40px;
+    font-size: 10px;
+  }
 }

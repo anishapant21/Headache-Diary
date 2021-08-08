@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer'
 import Header from './Header'
 import Navbar from './Navbar'
 import Summary from './Summary'
@@ -9,6 +10,7 @@ function Home({handleLogout}) {
             <Navbar handleLogout={handleLogout} />
             <Header />
             <Summary />
+            <Footer />
             
         </div>
     )

@@ -11,7 +11,7 @@
 
 ul {
   position: relative;
-  margin-left: 150px;
+  margin-left: 200px;
   top: 40px;
 }
 
@@ -49,6 +49,7 @@ ul {
 .nav-each {
   color: black;
   text-decoration: none;
+  padding: 0.625rem 0.625rem 0.625rem 0.625rem;
 }
 
 .nav-each:hover {
@@ -56,11 +57,25 @@ ul {
 }
 
 .logout {
-  margin-left: 180px;
+  margin-left: 300px;
 }
 
 .navbar-brand {
-  margin-left: 60px;
+  margin-left: 0px;
+}
+
+.featureall {
+  margin-left: 12rem;
+  color: #454749;
+}
+
+.featureonly {
+  margin-top: 15px;
+  color: #f8599b;
+}
+
+.logo-wrapper {
+  display: flex;
 }
 @media (max-width: 768px) {
   .navbar-brand {

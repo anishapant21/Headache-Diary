@@ -6,7 +6,7 @@ import firebase from "firebase";
 function Log() {
   const [days, setDays] = useState(0);
   const toggleLog = useToggle();
-  
+
   const database = firebase.database();
   var ref = database.ref("aches");
   ref.on("value", gotData, errData);
@@ -17,7 +17,6 @@ function Log() {
   }
   var difinday;
 
-  
   function gotData(data) {
     var dataAches = data.val();
 

@@ -19,11 +19,23 @@
   margin-bottom: 20px;
 }
 
+.cardmein {
+  height: 50vh;
+  border: black;
+}
+
 @media (max-width: 768px) {
   .piebox {
     width: 100vw;
   }
   .summary-wrapper {
     margin-top: 80px;
+  }
+
+  .seeall {
+    width: 200px;
+    font-size: 25px;
+    background-color: #95a3b3;
+    margin-bottom: 20px;
   }
 }

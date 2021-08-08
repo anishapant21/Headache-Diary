@@ -1,39 +1,35 @@
 import firebase from "firebase";
 
-
-
-
-
-const database  = firebase.database();
-var ref= database.ref("aches");
+const database = firebase.database();
+var ref = database.ref("aches");
 
 ref.on("value", gotData, errData);
 var triggers;
-var triggerList=[];
+var triggerList = [];
 var location;
-var locationList=[];
- 
-function gotData(data){
-    var dataAches = data.val();
+var locationList = [];
 
-    const charts = () =>{
-        var keys = Object.keys(dataAches);
-        for (let i =0; i<keys.length ; i++){
-            var k = keys[i];
-            triggers = dataAches[k].triggers;
-            triggerList.push(triggers)
+function gotData(data) {
+  var dataAches = data.val();
 
-            location=dataAches[k].location;
-            locationList.push(location)
-        }
+  const charts = () => {
+    var keys = Object.keys(dataAches);
+    for (let i = 0; i < keys.length; i++) {
+      var k = keys[i];
+      triggers = dataAches[k].triggers;
+      triggerList.push(triggers);
+
+      location = dataAches[k].location;
+      locationList.push(location);
     }
-    if (dataAches !=null){
-        charts();
-    }
+  };
+  if (dataAches != null) {
+    charts();
+  }
 }
 function errData(err) {
-    console.log("Error");
-  }
+  console.log("Error");
+}
 
 //export {triggerList}
-export {locationList}
+export { locationList };
