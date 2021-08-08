@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../styles/log.css";
 import { useToggle } from "../Context/LogContext.js";
 import firebase from "firebase";
+import 'firebase/database'; // If using Firebase database
+import 'firebase/storage';  // If using Firebase storage
 
 function Log() {
   const [days, setDays] = useState(0);
@@ -25,7 +27,7 @@ function Log() {
       var keys = Object.keys(dataAches);
       const e = keys[keys.length - 1];
       datadate = dataAches[e].date;
-      console.log(datadate);
+    
       const currDate = new Date(datadate);
 
       var currmid = currDate.toISOString().split("T")[0].split("-");
@@ -35,7 +37,7 @@ function Log() {
 
       const todayDate = new Date();
 
-      console.log(todayDate);
+  
       var difINtime = Math.abs(todayDate.getTime() - curfind.getTime());
       difinday = Math.round(difINtime / (1000 * 3600 * 24));
     };

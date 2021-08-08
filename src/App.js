@@ -1,5 +1,5 @@
 import Navbar from "./Components/Navbar";
-import React, { useEffect } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import History from "./Components/History";
@@ -7,7 +7,6 @@ import Insights from "./Components/Insights";
 import Header from "./Components/Header";
 import {LogProvider} from "./Context/LogContext.js";
 import Login from "./Components/Login";
-import Home from "./Components/Home";
 import Summary from "./Components/Summary";
 
 function App() {

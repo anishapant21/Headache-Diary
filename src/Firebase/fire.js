@@ -1,5 +1,7 @@
 // Your web app's Firebase configuration
 import firebase from "firebase";
+import 'firebase/database'; // If using Firebase database
+import 'firebase/storage';  // If using Firebase storage
 
 var firebaseConfig = {
   apiKey: "AIzaSyC1tKCj1FmxgrJAeBRvHO9OIk1MIMpO73A",

@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 
 import { FiFilePlus } from "react-icons/fi";
 import firebase from "firebase";
+import 'firebase/database'; // If using Firebase database
+import 'firebase/storage';  // If using Firebase storage
 
 function Note() {
   const [note, setNote] = useState("DRINK PLENTY OF WATER YOU’LL FEEL BETTER");
@@ -21,14 +23,12 @@ function Note() {
 
   function gotData(data) {
     var dataAll = data.val();
-    console.log(dataAll);
 
     const callme = () => {
       var dataAll = data.val();
       var keys = Object.keys(dataAll);
       const d = keys[keys.length - 1];
       datame = dataAll[d].note;
-      console.log(datame);
     };
 
     if (dataAll != null) {
@@ -45,7 +45,6 @@ function Note() {
     var data = {
       note: d.note,
     };
-    console.log(d.note);
     var ref = database.ref("notes");
     ref.push(data);
   };
@@ -59,7 +58,7 @@ function Note() {
           <div className="written">{note}</div>
           <button
             type="button"
-            class="btn btn-success buttonnote"
+            className="btn btn-success buttonnote"
             onClick={() => setAddButton(false)}
           >
             <FiFilePlus className="iconplus" /> ADD NOTE
@@ -71,7 +70,7 @@ function Note() {
     renderElem = (
       <div className="col-lg-5 offset-lg-1 col-md-6 col-10 offset-1">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div class="form-group">
+          <div className="form-group">
             <label for="exampleFormControlTextarea1">Note for yourself</label>
             <textarea
               class="form-control"

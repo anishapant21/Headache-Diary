@@ -15,9 +15,8 @@ function Insights() {
 
   for (let i = 0; i < tempList.length; i++) {
     sum += Number(tempList[i]);
-    console.log(i, tempList[i], sum);
     averageTemp = Math.round(sum / tempList.length);
-    console.log(averageTemp);
+    
   }
 
   //Trigger
@@ -26,7 +25,7 @@ function Insights() {
   var item;
   for (var i = 0; i < triggerList.length; i++) {
     for (var j = i; j < triggerList.length; j++) {
-      if (triggerList[i] == triggerList[j]) m++;
+      if (triggerList[i] === triggerList[j]) m++;
       if (mf < m) {
         mf = m;
         item = triggerList[i];
@@ -40,13 +39,11 @@ function Insights() {
   //Pain
   var sumPain = 0;
   var averagePain;
-  console.log(painList);
+  
 
   for (let i = 0; i < painList.length; i++) {
     sumPain += Number(painList[i]);
-    console.log(i, painList[i], sumPain);
     averagePain = Math.round(sumPain / painList.length);
-    console.log(averagePain);
   }
 
   //outdoors
@@ -55,7 +52,7 @@ function Insights() {
   var itemo;
   for (var i = 0; i < outdoorsList.length; i++) {
     for (var j = i; j < outdoorsList.length; j++) {
-      if (outdoorsList[i] == outdoorsList[j]) mo++;
+      if (outdoorsList[i] === outdoorsList[j]) mo++;
       if (mfo < mo) {
         mfo = mo;
         itemo = outdoorsList[i];
@@ -65,7 +62,7 @@ function Insights() {
   }
 
   const percentOutdoor = Math.round((mfo / outdoorsList.length) * 100);
-  console.log(itemo, mfo);
+  
 
   //medicine
 
@@ -74,7 +71,7 @@ function Insights() {
   var itemm;
   for (var i = 0; i < medList.length; i++) {
     for (var j = i; j < medList.length; j++) {
-      if (medList[i] == medList[j]) mm++;
+      if (medList[i] === medList[j]) mm++;
       if (mfm < mm) {
         mfm = mm;
         itemm = medList[i];
@@ -84,18 +81,16 @@ function Insights() {
   }
 
   const percentMedicine = 100 - Math.round((mfm / medList.length) * 100);
-  console.log(medList);
-  console.log(itemm, mfm);
-
+  
   return (
     <div className=" insights-wrapper container-fluid">
       <div className="col-lg-6 offset-lg-3 col-12 mt-5 ml-2 mr-2 ">
         <div>
           <div className="card border-dark mb-3 maincard">
-            <div class="card-header">Featured</div>
-            <ul class="list-group">
+            <div className="card-header">Featured</div>
+            <ul className="list-group">
               <div className="card">
-                <li class="list-group-item">
+                <li className="list-group-item">
                   {" "}
                   <p className="textbox">
                     The average temp at which you get headache is {averageTemp}
@@ -103,21 +98,21 @@ function Insights() {
                 </li>
               </div>
               <div className="card">
-                <li class="list-group-item">
+                <li className="list-group-item">
                   <p className="textbox">
                     {item} triggers you {percentTrigger}% of the times.
                   </p>
                 </li>{" "}
               </div>
               <div className="card">
-                <li class="list-group-item">
+                <li className="list-group-item">
                   <p className="textbox">
                     Your average pain level is {averageTemp}
                   </p>
                 </li>{" "}
               </div>
               <div className="card">
-                <li class="list-group-item">
+                <li className="list-group-item">
                   <p className="textbox">
                     You get headaches {percentOutdoor}% of the times you go
                     outdoors.
@@ -125,7 +120,7 @@ function Insights() {
                 </li>
               </div>
               <div className="card">
-                <li class="list-group-item">
+                <li className="list-group-item">
                   <p className="textbox">
                     You have to take medicines {percentMedicine} % of the times.
                   </p>

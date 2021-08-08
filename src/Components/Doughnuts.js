@@ -2,8 +2,6 @@ import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
 function Doughnuts({ typesVal, typesCount, color }) {
-  console.log(typesVal);
-  console.log(typesCount);
   const data = {
     labels: typesVal,
     datasets: [

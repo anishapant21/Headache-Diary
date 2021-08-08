@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import firebase from "firebase";
+import 'firebase/database'; // If using Firebase database
+import 'firebase/storage';  // If using Firebase storage
 import { useEffect } from "react/cjs/react.development";
 import Doughnuts from "./Doughnuts";
 import "../styles/Summary.css";
@@ -60,7 +62,6 @@ function Summary() {
           listSymptoms.push(symptoms);
         }
 
-        console.log(listSymptoms);
         ///////////// For TYPES OF HEADACHES /////
 
         const map = listtypes.reduce(
@@ -83,8 +84,7 @@ function Summary() {
         setSympState(sympVal);
         sympCount = [...mapSymp.values()];
         setSympCounts(sympCount);
-        console.log("I am symptoms", sympState);
-        console.log("I am symptoms", sympCounts);
+        
         //////////////////////////////////////////
       };
 
@@ -118,7 +118,7 @@ function Summary() {
         <div className="  text-center">
           <button
             type="button"
-            class="seeall btn "
+            className="seeall btn "
             onClick={() => setSeeAll(!seeAll)}
           >
             SEE ALL

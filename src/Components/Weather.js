@@ -32,10 +32,6 @@ function Weather() {
         const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=7c206eea4a416664649e7ec4cfac7dd8`;
         const response = await fetch(url);
         const resJson = await response.json();
-        console.log("result is here");
-        console.log(resJson);
-        console.log(Math.round(resJson.main.temp - 273));
-        console.log(resJson.weather[0].main);
         setTemp(Math.round(resJson.main.temp - 273));
         setWeather(resJson.weather[0].main);
       };

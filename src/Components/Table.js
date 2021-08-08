@@ -17,7 +17,6 @@ function Table({
   return (
     <>
       <tr>
-        <th scope="row"></th>
         <td>{date}</td>
         <td>{time}</td>
         <td>{start}</td>

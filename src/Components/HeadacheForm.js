@@ -3,6 +3,8 @@ import "../styles/headacheform.css";
 import { useToggle } from "../Context/LogContext.js";
 import { useForm } from "react-hook-form";
 import firebase from "firebase";
+import 'firebase/database'; // If using Firebase database
+import 'firebase/storage';  // If using Firebase storage
 
 function HeadacheForm() {
   const toggleLog = useToggle();
@@ -185,7 +187,7 @@ function HeadacheForm() {
           <div className="form-group col-md-4 col-lg-4 col-5 line">
             <label>Medicine?</label>
 
-            <div class="form-check line">
+            <div className="form-check line">
               <input
                 class="form-check-input"
                 type="radio"
@@ -194,11 +196,11 @@ function HeadacheForm() {
                 value="yes"
                 {...register("medicine")}
               />
-              <label class="form-check-label" for="gridRadios1">
+              <label className="form-check-label" for="gridRadios1">
                 Yes
               </label>
             </div>
-            <div class="form-check line">
+            <div className="form-check line">
               <input
                 class="form-check-input"
                 type="radio"
@@ -207,7 +209,7 @@ function HeadacheForm() {
                 value="no"
                 {...register("medicine")}
               />
-              <label class="form-check-label" for="gridRadios2">
+              <label className="form-check-label" for="gridRadios2">
                 No
               </label>
             </div>

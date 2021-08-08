@@ -6,33 +6,46 @@ import "../styles/history.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
+import { useEffect } from "react/cjs/react.development";
 
 function History() {
   const [selectType, setSelectType] = useState("all");
   const [selectValue, setSelectValue] = useState("all");
-  var keys = Object.keys(dataAches);
+
+  var handleSelectType;
+  var handleSelectLocation;
+  var  handleSelectTrigger;
+  var handleSelectOutdoors;
+  var handleSelectMedicines;
+  var rendermesana;
+
+  useEffect(()=>{
+    
+  })
+  if (dataAches !=undefined){
+    var keys = Object.keys(dataAches);
   var selectKeys;
-  const handleSelectType = (e) => {
+  handleSelectType = (e) => {
     setSelectType("Type");
     setSelectValue(e);
   };
 
-  const handleSelectLocation = (e) => {
+  handleSelectLocation = (e) => {
     setSelectType("Location");
     setSelectValue(e);
   };
 
-  const handleSelectTrigger = (e) => {
+  handleSelectTrigger = (e) => {
     setSelectType("Trigger");
     setSelectValue(e);
   };
 
-  const handleSelectOutdoors = (e) => {
+  handleSelectOutdoors = (e) => {
     setSelectType("Outdoors");
     setSelectValue(e);
   };
 
-  const handleSelectMedicines = (e) => {
+  handleSelectMedicines = (e) => {
     setSelectType("Medicines");
     setSelectValue(e);
   };
@@ -59,7 +72,7 @@ function History() {
     );
   }
 
-  const rendermesana = selectKeys.map((key) => {
+  rendermesana = selectKeys.map((key) => {
     const {
       date,
       location,
@@ -92,6 +105,13 @@ function History() {
       />
     );
   });
+
+  }
+  
+
+ 
+
+ 
 
   return (
     <div className="history-wrapper">
@@ -173,10 +193,9 @@ function History() {
       </div>
 
       <div className=" col-lg-8 offset-lg-2 table-responsive-sm table-wrapper">
-        <table class="table table-bordered border-danger table-striped">
+        <table className="table table-bordered border-danger table-striped">
           <thead>
             <tr>
-              <th scope="col"></th>
               <th scope="col">Date</th>
               <th scope="col">Time</th>
               <th scope="col">Start</th>
