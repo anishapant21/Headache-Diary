@@ -41,7 +41,7 @@ function Insights() {
   var averagePain;
   
 
-  for (let i = 0; i < painList.length; i++) {
+  for (i = 0; i < painList.length; i++) {
     sumPain += Number(painList[i]);
     averagePain = Math.round(sumPain / painList.length);
   }
@@ -50,8 +50,8 @@ function Insights() {
   var mfo = 1;
   var mo = 0;
   var itemo;
-  for (var i = 0; i < outdoorsList.length; i++) {
-    for (var j = i; j < outdoorsList.length; j++) {
+  for (i = 0; i < outdoorsList.length; i++) {
+    for (j = i; j < outdoorsList.length; j++) {
       if (outdoorsList[i] === outdoorsList[j]) mo++;
       if (mfo < mo) {
         mfo = mo;
@@ -69,8 +69,8 @@ function Insights() {
   var mfm = 1;
   var mm = 0;
   var itemm;
-  for (var i = 0; i < medList.length; i++) {
-    for (var j = i; j < medList.length; j++) {
+  for (i = 0; i < medList.length; i++) {
+    for (j = i; j < medList.length; j++) {
       if (medList[i] === medList[j]) mm++;
       if (mfm < mm) {
         mfm = mm;

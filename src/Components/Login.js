@@ -58,6 +58,8 @@ function Login() {
           case "auth/weak-password":
             setPasswordError(err.message);
             break;
+          default:
+            break;
         }
       });
   };
@@ -66,18 +68,19 @@ function Login() {
     fire.auth().signOut();
   };
 
-  const authListener = () => {
-    fire.auth().onAuthStateChanged((user) => {
-      if (user) {
-        clearInputs();
-        setUser(user);
-      } else {
-        setUser("");
-      }
-    });
-  };
+  
 
   useEffect(() => {
+    const authListener = () => {
+      fire.auth().onAuthStateChanged((user) => {
+        if (user) {
+          clearInputs();
+          setUser(user);
+        } else {
+          setUser("");
+        }
+      });
+    };
     authListener();
   }, []);
   return (

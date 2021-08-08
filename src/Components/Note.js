@@ -39,7 +39,7 @@ function Note() {
   }
   useEffect(() => {
     setNote(datame);
-  });
+  }, [datame]);
 
   const onSubmit = (d) => {
     setAddButton(true);

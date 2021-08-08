@@ -80,7 +80,7 @@ function HeadacheForm() {
           </div>
         </div>
         <div className="form-row col-md-6 col-lg-9">
-          <label for="customRange1" class="form-label eachline">
+          <label for="customRange1" className="form-label eachline">
             Pain Level
           </label>
           <input

@@ -90,6 +90,7 @@ function History() {
 
     return (
       <Table
+      key={key}
         triggers={triggers}
         date={date}
         location={location}
@@ -119,7 +120,7 @@ function History() {
         <div>
           <button
             type="button"
-            class="btn btn-primary filtereach"
+            className="btn btn-primary filtereach"
             onClick={() => setSelectType("all")}
           >
             All

@@ -65,7 +65,7 @@ function Log() {
           </p>
         </div>
       </div>
-      <button type="button" class="btn btn-info buttonlog" onClick={toggleLog}>
+      <button type="button" className="btn btn-info buttonlog" onClick={toggleLog}>
         LOG HEADACHE
       </button>
     </div>

@@ -9,7 +9,7 @@ function Navbar({ handleLogout }) {
     <div>
       <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="#home">
             <div className="logo-wrapper">
               <div className="align-me-left">
                 <div className="logo"> Headache Diary</div>
