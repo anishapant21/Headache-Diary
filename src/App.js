@@ -8,6 +8,7 @@ import Header from "./Components/Header";
 import {LogProvider} from "./Context/LogContext.js";
 import Login from "./Components/Login";
 import Summary from "./Components/Summary";
+import Footer from "./Components/Footer";
 
 function App() {
 
@@ -21,12 +22,14 @@ function App() {
           <Route exact path="/history">
           <Navbar />
             <History />
+            <Footer />
           </Route>
         </Switch>
         <Switch>
           <Route exact path="/insights">
           <Navbar />
             <Insights />
+            <Footer />
           </Route>
         </Switch>
         <Switch>
@@ -34,6 +37,7 @@ function App() {
             <Navbar />
             <Header />
             <Summary />
+            <Footer />
           </Route>
         </Switch>
         <Switch>
