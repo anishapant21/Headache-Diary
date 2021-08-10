@@ -6,11 +6,6 @@ Headache diary is an app close to people who suffer from headaches often. It's a
 
 ![mainpage](images/headmain.png)
 
-<p float="left">
-  <img src="/images/headachehistory.png" />
-  <img src="/images/insights.png" /> 
-  
-</p>
 
 ## Demo
 
