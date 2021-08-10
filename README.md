@@ -1,8 +1,8 @@
 # Headache Diary
 
-Headache diary is an app close to people who suffer from headaches often. It's a diary that keeps track of the types of headaches including triggers, symptoms, location, medicines and outdoor status. It displays the better vizualization of the patterns of headaches which also has note to self feature. History can easily be accessed and can be filtered according to different categories.
+Headache diary is an app built for the people who suffer from headaches often. It's a record keeping system that keeps track of the types of headaches including triggers, symptoms, location, medicines and outdoor conditions. It presents better vizualization of the patterns of headaches with summary of different categories. The log history can easily be accessed and can be filtered according to different categories. The note to self feature lets you add important notes and advices for yourselves.
 
-# Screenshot
+## Screenshot
 
 ![mainpage](images/headmain.png)
 
