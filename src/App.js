@@ -29,7 +29,6 @@ function App() {
           <Route exact path="/insights">
           <Navbar />
             <Insights />
-            <Footer />
           </Route>
         </Switch>
         <Switch>
